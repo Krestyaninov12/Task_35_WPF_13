@@ -7,7 +7,7 @@
         xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         xmlns:sys="clr-namespace:System;assembly=mscorlib" 
         mc:Ignorable="d" 
-        Title="MainWindow" Height="450" Width="800" Closing="Window_Closing" Style="{DynamicResource WindowStyle}">
+        Title="MainWindow" Height="450" Width="800" Closing="Window_Closing" >
     <Window.CommandBindings>
         <CommandBinding Command="Open" Executed="OpenExecuted"/>
         <CommandBinding Command="Save" Executed="SaveExecuted"/>
@@ -20,7 +20,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Menu DockPanel.Dock="Top" VerticalContentAlignment="Top" Margin="5" Padding="5" Style="{DynamicResource WindowStyle}">
+        <Menu DockPanel.Dock="Top" VerticalContentAlignment="Top" Margin="5" Padding="5" >
             <MenuItem Header="_Файл">
                 <MenuItem Header="_Открыть" Command="Open"/>
                 <MenuItem Header="_Сохранить" Command="Save"/>
@@ -46,22 +46,22 @@
                 <MenuItem Header="_Помощь" Command="Help"/>
             </MenuItem>
         </Menu>
-        <ToolBarTray Grid.Row="1" Style="{DynamicResource  WindowStyle}">
+        <ToolBarTray Grid.Row="1" >
             <ToolBar Margin="5" Padding="5">
-                <ComboBox Margin="5" Padding="5" SelectedIndex="0" Width="200" SelectionChanged="ComboBox_SelectionChanged" ItemsSource="{Binding Source={StaticResource FontFamily}}" Style="{DynamicResource ComboBoxStyle}"/>                
-                <ComboBox Margin="5" Padding="5" SelectedIndex="2" Width="50" SelectionChanged="ComboBox_SelectionChanged_1" ItemsSource="{Binding Source={StaticResource FontSize}}" Style="{DynamicResource ComboBoxStyle}"/>                    
+                <ComboBox Margin="5" Padding="5" SelectedIndex="0" Width="200" SelectionChanged="ComboBox_SelectionChanged" ItemsSource="{Binding Source={StaticResource FontFamily}}"/>                
+                <ComboBox Margin="5" Padding="5" SelectedIndex="2" Width="50" SelectionChanged="ComboBox_SelectionChanged_1" ItemsSource="{Binding Source={StaticResource FontSize}}"/>                    
             </ToolBar>
             <ToolBar Margin="5" Padding="5">
                 <Button Click="Button_Click">
-                    <Image Source="Icons/1.png" Height="30" Width="30" Style="{DynamicResource ButtonStyle}"></Image>
+                    <Image Source="Icons/1.png" Height="30" Width="30" ></Image>
                 </Button>
                 <Separator/>
                 <Button Click="Button_Click_1">
-                    <Image Source="Icons/2.jpg" Height="30" Width="30" Style="{DynamicResource ButtonStyle}"></Image>
+                    <Image Source="Icons/2.jpg" Height="30" Width="30" ></Image>
                 </Button>
                 <Separator/>
                 <Button Click="Button_Click_2">
-                    <Image Source="Icons/3.png" Height="30" Width="30" Style="{DynamicResource ButtonStyle}"></Image>
+                    <Image Source="Icons/3.png" Height="30" Width="30" ></Image>
                 </Button>
                 <Separator/>
                 <StackPanel>
@@ -74,9 +74,9 @@
                  Grid.Row="2" 
                  Margin="5" 
                  Padding="5" 
-                 FontSize="{Binding Source={StaticResource FontSize}}" 
-                 FontFamily="{Binding Source={StaticResource FontFamily}}" 
-                 TextWrapping="Wrap" 
-                 Style="{DynamicResource TextBlokJuatifyStyle}"/>
+                 FontSize="16" 
+                 FontFamily="{Binding ElementName=FontFamily, Path=text}" 
+                 TextWrapping="Wrap"
+        Style="{DynamicResource TextBlokJuatifyStyle}"/>
     </Grid>
 </Window>
